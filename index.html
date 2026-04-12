@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlashPack - 計算フラッシュカード</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Start Screen -->
+        <main id="start-screen" class="screen show">
+            <header class="retro-header">
+                <h1 class="pixel-text color-yellow glow">FLASH PACK</h1>
+                <p class="pixel-text subtitle">CALCULATION ADVENTURE</p>
+            </header>
+
+            <section class="mode-selection">
+                <button class="mode-btn pixel-text" data-mode="1">MODE 1<br><span class="mode-desc">2桁 +-</span></button>
+                <button class="mode-btn pixel-text" data-mode="2">MODE 2<br><span class="mode-desc">小数 × 自然数</span></button>
+                <button class="mode-btn pixel-text" data-mode="3">MODE 3<br><span class="mode-desc">面積タイル</span></button>
+                <button class="mode-btn pixel-text" data-mode="4">MODE 4<br><span class="mode-desc">1 への演算</span></button>
+                <button class="mode-btn pixel-text" data-mode="5">MODE 5<br><span class="mode-desc">九九</span></button>
+                <button class="mode-btn pixel-text" data-mode="6">MODE 6<br><span class="mode-desc">わり算</span></button>
+            </section>
+
+            <section class="settings pixel-text">
+                <div class="setting-item">
+                    <label for="question-count">QUESTIONS:</label>
+                    <input type="number" id="question-count" min="1" max="100" value="10">
+                </div>
+                <div class="setting-item">
+                    <label>ANSWER:</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="display-mode" value="manual" checked> MANUAL</label>
+                        <label><input type="radio" name="display-mode" value="auto"> AUTO</label>
+                    </div>
+                </div>
+                <div id="auto-timer-setting" class="setting-item hidden">
+                    <label for="auto-timer">SECONDS:</label>
+                    <input type="number" id="auto-timer" min="1" max="10" step="0.5" value="2.0">
+                </div>
+                <div class="setting-item">
+                    <label><input type="checkbox" id="character-toggle" checked> CHARACTER</label>
+                </div>
+                <div class="setting-item">
+                    <label><input type="checkbox" id="effect-toggle"> SHATTER FX</label>
+                </div>
+                <div class="setting-item">
+                    <label for="bgm-upload">BGM:</label>
+                    <input type="file" id="bgm-upload" accept="audio/*">
+                </div>
+            </section>
+
+            <div class="action-area">
+                <button id="start-btn" class="pixel-text large-btn glow-yellow">START!</button>
+            </div>
+        </main>
+
+        <!-- Game Screen -->
+        <main id="game-screen" class="screen">
+            <div class="game-header">
+                <button id="quit-btn" class="pixel-text quit-btn">QUIT</button>
+                <span class="pixel-text color-cyan">SCORE: <span id="current-question">1</span>/<span id="total-questions">10</span></span>
+            </div>
+
+            <div id="problem-area" class="problem-container">
+                <div id="character-box" class="character-box"></div>
+                <div id="area-visualizer" class="area-grid hidden"></div>
+                <div id="formula" class="number-text formula">24 + 56</div>
+                <div id="answer-box" class="answer-wrapper">
+                    <div id="answer-text" class="number-text answer hidden">?</div>
+                </div>
+            </div>
+
+            <div class="interaction-hint pixel-text">TAP TO SEE ANSWER</div>
+        </main>
+
+        <!-- Boss Warning Screen -->
+        <div id="boss-warning" class="screen danger-overlay">
+            <div class="warning-text pixel-text">BOSS INCOMING!</div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
