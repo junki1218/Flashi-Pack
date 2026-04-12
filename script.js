@@ -310,21 +310,24 @@ function nextQuestion() {
         return;
     }
 
-    const problemArea = document.getElementById('problem-area');
+    const problemContainer = document.querySelector('.problem-container');
 
     if (STATE.effectEnabled) {
-        problemArea.classList.add('shatter');
-        setTimeout(() => {
-            problemArea.classList.remove('shatter');
-            loadNextProblem();
-        }, 1000);
+        if (problemContainer) {
+            problemContainer.classList.add('shatter');
+            setTimeout(() => {
+                problemContainer.classList.remove('shatter');
+                loadNextProblem();
+            }, 1000); // shatter animation is 1s
+        } else {
+            loadNextProblem(); // Fallback if element not found
+        }
     } else {
         elements.app.classList.add('shake');
-        elements.app.addEventListener('animationend', () => {
+        setTimeout(() => {
             elements.app.classList.remove('shake');
-            // Wait a bit after shake before loading next problem for better feel
-            setTimeout(loadNextProblem, 50);
-        }, { once: true });
+            loadNextProblem();
+        }, 500); // Corresponds to the 0.5s animation duration
     }
 }
 

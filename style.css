@@ -179,8 +179,8 @@ body {
     background: transparent;
     border: 2px solid var(--neon-pink);
     color: var(--neon-pink);
-    padding: 5px 10px;
-    font-size: 0.7rem;
+    padding: 10px 15px;
+    font-size: 0.8rem;
     cursor: pointer;
     transition: all 0.2s;
 }
@@ -289,6 +289,10 @@ body {
 
 .problem-container.shatter {
     animation: shatter-effect 1s ease-in-out;
+}
+
+#app.shake {
+    animation: shake 0.5s ease-in-out;
 }
 
 /* Shake Animation */
