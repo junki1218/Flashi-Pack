@@ -20,9 +20,15 @@ const STATE = {
     assets: [
         'assets/hero_1.png', 'assets/hero_2.png', 'assets/hero_3.png',
         'assets/hero_4.png', 'assets/hero_5.png', 'assets/hero_6.png',
-        'assets/hero_7.png',
+        'assets/hero_7.png', 'assets/hero_8.png', 'assets/hero_9.png',
+        'assets/hero_10.png', 'assets/hero_11.png', 'assets/hero_12.png',
+        'assets/hero_13.png', 'assets/hero_14.png', 'assets/hero_15.png',
+        'assets/hero_16.png', 'assets/hero_17.png', 'assets/hero_18.png',
+        'assets/hero_19.png', 'assets/hero_20.png',
         'assets/enemy_1.png', 'assets/enemy_2.png', 'assets/enemy_3.png',
-        'assets/enemy_4.png', 'assets/enemy_5.png', 'assets/enemy_6.png'
+        'assets/enemy_4.png', 'assets/enemy_5.png', 'assets/enemy_6.png',
+        'assets/enemy_7.png', 'assets/enemy_8.png', 'assets/enemy_9.png',
+        'assets/enemy_10.png'
     ]
 };
 
